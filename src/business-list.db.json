@@ -1,0 +1,16 @@
+{
+  "businesses": [
+    {
+      "id": "1",
+      "name": "Easy Street Realty",
+      "location": "100 easy st",
+      "rating": "5 stars"
+    },
+    {
+      "id": "2",
+      "name": "Welcome Home Rental Agency",
+      "location": "20 E Robinson St",
+      "rating": "4.3 stars"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 *::after{box-sizing:border-box;}
 
 * {
-  margin: 1rem  ;
+
 }
 
 :root {
@@ -18,3 +18,32 @@
     border: 0;
 
   }
+
+  body {
+    background-color: #000000;
+
+  }
+@media screen and (min-width: 820px) {
+
+  main {
+    margin-top: 2rem;
+    padding-left: 200px;
+
+  }
+
+  .business-list-container {
+    margin-left: 200px;
+  }
+
+  .page-header {
+    margin-left: 175px;
+  }
+
+}
+
+main {
+padding: 1rem;
+}
+
+
+

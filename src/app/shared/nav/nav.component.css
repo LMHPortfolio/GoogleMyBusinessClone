@@ -1,5 +1,5 @@
 .nav-text {
-  color: #ffffff;
+  color: #000000;
 }
 
 .nav-container {
@@ -8,11 +8,12 @@
   padding: 10px;
   position: fixed;
   overflow-x: hidden;
-  background-color: dimgray;
+  background-color: rgb(222, 222, 222);
   top: 0;
   left: 0;
   z-index: 1;
   transition: 0.5s;
+  box-shadow: 0 0 12px 0 #353535;
 
 }
 

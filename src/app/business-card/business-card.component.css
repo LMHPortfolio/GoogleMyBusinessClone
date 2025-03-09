@@ -8,7 +8,7 @@
   padding: 1rem;
   gap: 0.7rem;
   background-color: rgb(255, 255, 255);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 
 
 }
@@ -34,7 +34,6 @@
 }
 
 .biz-title:hover {
-
   color: #abfccf;
 
 }
@@ -56,6 +55,10 @@
   padding: 0.6rem;
   margin: 0.2rem;
   border-radius: 20px;
+  transition: transform 0.5s ease;
 
 }
+.tag-chip:hover {
+  transform: scale(1.08);
 
+}

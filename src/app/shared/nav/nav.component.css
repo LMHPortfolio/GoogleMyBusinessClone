@@ -30,10 +30,14 @@
   background-color: #e5e5e5;
   box-shadow: 0 0 7px 0 #989898;
   align-items: center;
+  transition: transform 0.3s ease;
+
 
 }
 .nav-container a:hover {
-  background-color: #ffffff;
+  background-color: #eaeaea;
+  transform: scale(1.03);
+
 }
 
 .nav-icon {

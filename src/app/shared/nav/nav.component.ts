@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })

@@ -38,9 +38,24 @@
   color: #abfccf;
 
 }
-.biz-details {
-  margin: 1rem;
-  padding-left: 1rem;
+.biz-details  {
+  list-style-type: none;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1rem;
+  margin-left: 0.7rem;
   color: rgb(0, 0, 0);
+
+}
+
+
+.tag-chip {
+  font-size: 0.8rem;
+  color: white;
+  background-color: #87b2ad;
+  display: inline-flex;
+  padding: 0.6rem;
+  margin: 0.2rem;
+  border-radius: 20px;
+
 }
 

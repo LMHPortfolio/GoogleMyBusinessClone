@@ -1,6 +1,7 @@
 .nav-text {
   color: #000000;
-
+  font-size: 0.9rem;
+  width: 100%;
 }
 
 .nav-container {
@@ -68,6 +69,11 @@
     cursor: pointer;
     padding: 0.5rem;
     width: unset;
+
+  }
+
+  .nav-text {
+    font-size: 0.8rem;
 
   }
 

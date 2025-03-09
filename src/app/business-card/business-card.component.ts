@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import type {Business} from '../Business';
+import { BusinessDataService } from '../business-data.service';
 
 @Component({
   selector: 'app-business-card',
@@ -11,10 +12,27 @@ import type {Business} from '../Business';
 
 export class BusinessCardComponent implements Business {
 
-  name = "ACME";
-  location = "123 Easy St";
-  rating = "4.2 stars";
-  tags = ["orlando"];
+  dummyBusinessesList =
+    [
+      {
+        id: "1",
+        name: "Easy Street Realty",
+        location: "100 easy st",
+        rating: "5 stars",
+        tags: ['0rlando'],
+      },
+      {
+        id: "2",
+        name: "Welcome Home Rental Agency",
+        location: "20 E Robinson St",
+        rating: "4.3 stars",
+        tags: ['Orlando', 'realty'],
+      }
+    ];
 
+    name = this.dummyBusinessesList[0].name;
+    location = this.dummyBusinessesList[0].location;
+    rating = this.dummyBusinessesList[0].rating;
+    tags = this.dummyBusinessesList[0].tags;
 
 }

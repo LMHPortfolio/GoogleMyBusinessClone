@@ -3,9 +3,7 @@ import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-nav',
-  imports: [
-    NgOptimizedImage
-  ],
+  imports: [],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })

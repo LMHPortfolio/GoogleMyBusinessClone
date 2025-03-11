@@ -29,12 +29,12 @@
 
 .biz-title {
   padding-left: 0.7rem;
-  color: #2ea49e;
+  color: rgb(0, 128, 100);
   letter-spacing: .08rem;
 }
 
 .biz-title:hover {
-  color: #abfccf;
+  color: #116233;
 
 }
 .biz-details  {
@@ -49,8 +49,8 @@
 
 .tag-chip {
   font-size: 0.8rem;
-  color: white;
-  background-color: #87b2ad;
+  color: #000000;
+  background-color: #e5e5e5;
   display: inline-flex;
   padding: 0.6rem;
   margin: 0.2rem;

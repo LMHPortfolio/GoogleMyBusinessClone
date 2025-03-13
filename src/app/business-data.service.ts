@@ -13,6 +13,7 @@ export class BusinessDataService {
       rating: Math.floor(Math.random()*6) + "." + Math.floor(Math.random()*9).toString(),
       tags: faker.location.city()
     }
+
   };
 
 }

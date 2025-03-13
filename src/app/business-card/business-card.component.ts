@@ -20,7 +20,5 @@ export class BusinessCardComponent implements Business {
   rating = this.businessService.generateFakeBusiness().rating;
   tags = this.businessService.generateFakeBusiness().tags;
 
-  
-
 
 }

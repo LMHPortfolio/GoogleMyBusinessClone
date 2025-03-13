@@ -3,8 +3,9 @@
   flex-direction: column;
   min-width: 300px;
   max-width: 400px;
+  border: 2px solid rgba(128, 128, 128, 0.21);
   border-radius: 12px;
-  box-shadow: 1px 1px 5px 1px #aeaeae;
+/*  box-shadow: 1px 1px 5px 1px #aeaeae;*/
   padding: 1rem;
   gap: 0.7rem;
   background-color: rgb(255, 255, 255);
@@ -31,6 +32,7 @@
   padding-left: 0.7rem;
   color: rgb(0, 128, 100);
   letter-spacing: .08rem;
+  height: 4rem;
 }
 
 .biz-title:hover {
@@ -39,10 +41,18 @@
 }
 .biz-details  {
   list-style-type: none;
+  font-size: 1.2rem;
   letter-spacing: 0.05rem;
   margin-bottom: 1rem;
   margin-left: 0.7rem;
   color: rgb(0, 0, 0);
+
+
+}
+
+.star-rating {
+  display: inline-flex;
+
 
 }
 
@@ -62,3 +72,5 @@
   transform: scale(1.08);
 
 }
+
+

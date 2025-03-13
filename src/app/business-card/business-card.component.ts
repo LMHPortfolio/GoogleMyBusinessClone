@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import type {Business} from '../Business';
+import { inject} from '@angular/core';
 import { BusinessDataService } from '../business-data.service';
 
 @Component({
@@ -12,27 +13,14 @@ import { BusinessDataService } from '../business-data.service';
 
 export class BusinessCardComponent implements Business {
 
-  dummyBusinessesList =
-    [
-      {
-        id: "1",
-        name: "Easy Street Realty",
-        location: "100 easy st",
-        rating: "5 stars",
-        tags: ['0rlando'],
-      },
-      {
-        id: "2",
-        name: "Welcome Home Rental Agency",
-        location: "20 E Robinson St",
-        rating: "4.3 stars",
-        tags: ['Orlando', 'realty'],
-      }
-    ];
+  private businessService = inject(BusinessDataService);
 
-    name = this.dummyBusinessesList[0].name;
-    location = this.dummyBusinessesList[0].location;
-    rating = this.dummyBusinessesList[0].rating;
-    tags = this.dummyBusinessesList[0].tags;
+  name = this.businessService.generateFakeBusiness().name;
+  location = this.businessService.generateFakeBusiness().location;
+  rating = this.businessService.generateFakeBusiness().rating;
+  tags = this.businessService.generateFakeBusiness().tags;
+
+  
+
 
 }

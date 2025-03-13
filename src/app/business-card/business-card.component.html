@@ -4,12 +4,13 @@
   <h2 class="biz-title">{{ name }}</h2>
   <ul class="biz-details">
     <li>{{ location }}</li>
-    <li>{{ rating }}</li>
+    <li class="star-rating">Rating: <img src="assets/star.svg">{{ rating }}</li>
   </ul>
 
   <ul>
-    <li class="tag-chip">{{ tags[0] }}</li>
-    <li class="tag-chip">{{ tags[0] }}</li>
+
+    <li class="tag-chip">{{ tags }}</li>
+
   </ul>
 
 </div>

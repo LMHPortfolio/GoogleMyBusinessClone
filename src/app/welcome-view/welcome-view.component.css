@@ -1,0 +1,12 @@
+
+.welcome-view-container {
+  margin-left: 2rem;
+
+}
+
+@media screen and (min-width: 820px) {
+  .welcome-view-container {
+    margin-left: 260px;
+
+  }
+}

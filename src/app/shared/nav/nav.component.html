@@ -1,5 +1,6 @@
 
 <!--open and close nav slide out on click nav icon-->
+<!--Mobile menu-->
 <span id="biz-central-mobile">
       <img
         src="assets/bizcentral-icon.svg" alt="MyBizCentral" class="mybiz-icon">
@@ -19,6 +20,8 @@
       src="assets/menu_icon.svg" alt="menu" class="hamburger-icon">
   </div>
 </div>
+
+<!--Desktop Menu-->
 <div class="nav-container">
 
 <span id="biz-central">
@@ -28,18 +31,27 @@
     </span>
 
   <nav class="nav-text">
-    <span><a>
+    <span>
+      <a
+        routerLink="/welcome-view"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
       <img
         src="assets/home_icon.svg" alt="house" class="nav-icon">
-      Dashboard</a>
+      Dashboard
+      </a>
     </span>
-    <span><a>
+    <span>
+      <a
+        routerLink="/business-list"
+         routerLinkActive="activebutton"
+         ariaCurrentWhenActive="page"
+      >
       <img
         src="assets/settings_icon.svg" alt="house" class="nav-icon">
-      Account Settings</a>
+      View My Businesses</a>
     </span>
-
-
   </nav>
 </div>
 

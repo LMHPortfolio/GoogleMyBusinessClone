@@ -18,14 +18,14 @@ font-family: "Instrument Sans", sans-serif;
     padding: 0;
     border: 0;
 
-
   }
 
   body {
     background-color: #e5e5e5;
 
+
   }
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 828px) {
 
   main {
     margin-top: 2rem;
@@ -35,9 +35,18 @@ font-family: "Instrument Sans", sans-serif;
 
 }
 
+@media screen and (min-width: 520px) {
+
+  main {
+    margin-top: unset;
+    padding-left: unset;
+
+  }
+
+}
+
 main {
   padding: 1rem;
 }
-
 
 

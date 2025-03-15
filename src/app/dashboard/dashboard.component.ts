@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import {HeaderComponent} from "../shared/header/header.component";
 
 @Component({
-  selector: 'app-welcome-view',
+  selector: 'app-dashboard',
   imports: [
     HeaderComponent,
 
   ],
-  templateUrl: './welcome-view.component.html',
-  styleUrl: './welcome-view.component.css'
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css'
 })
-export class WelcomeViewComponent {
+export class DashboardComponent {
 pageTitle = "Welcome, Name";
 }

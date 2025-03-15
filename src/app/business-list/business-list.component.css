@@ -1,14 +1,15 @@
 .business-list-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.2rem;
+  gap: 1rem;
   padding: 1rem;
-  margin-left: unset;
+  max-width: 1250px;
+
 }
 
 @media screen and (min-width: 820px) {
   .business-list-container {
-    margin-left: 200px;
+    margin-left: 225px;
   }
 
 }

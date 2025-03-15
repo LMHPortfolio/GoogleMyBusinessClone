@@ -3,10 +3,44 @@
   margin-left: 2rem;
 
 }
+.dashboard-tile-top-row {
+  margin-left: 1rem;
+
+}
+
+.dashboard-tile-2nd-row {
+  margin-left: 1rem;
+
+}
 
 @media screen and (min-width: 820px) {
   .welcome-view-container {
-    margin-left: 260px;
+    margin-left: 250px;
 
+
+  }
+
+  .dashboard-tile-top-row {
+    width: 245px;
+    height: 140px;
+    background-color: #ffffff;
+    border: 2px solid rgba(128, 128, 128, 0.21);
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0.3rem;
+    padding: 1.3rem;
+  }
+
+  .dashboard-tile-2nd-row {
+    width: 375px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 2px solid rgba(128, 128, 128, 0.21);
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0.3rem;
+    padding: 1.3rem;
   }
 }

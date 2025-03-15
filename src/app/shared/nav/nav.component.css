@@ -7,17 +7,16 @@
 }
 
 .nav-container {
-  width: 200px;
+  width: 225px;
   height: 100%;
   padding: 1rem;
   position: fixed;
   overflow-x: hidden;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
   top: 0;
   left: 0;
   z-index: 1;
   transition: 0.5s;
-  justify-items: center;
 
 }
 
@@ -28,23 +27,19 @@
   font-weight: 600;
   padding-top: 0.3rem;
   padding-left: 0.2rem;
-  justify-content: start;
+
   text-decoration: none;
   color: inherit;
-
-
   width: 90%;
-
   cursor: pointer;
   border-radius: 5px;
   align-items: center;
-  justify-items: start;
   transition: transform 0.3s ease;
-
 }
 
 .nav-container a:first-child {
    margin-top: 1rem;
+
   }
 
 
@@ -149,7 +144,6 @@ padding-top: 1rem;
     font-weight: bolder;
     letter-spacing: 0.03rem;
     font-family: "Geist Mono", sans-serif;
-    display: inline-flex;
     gap: 0.7rem;
     align-items: center;
 

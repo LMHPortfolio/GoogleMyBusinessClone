@@ -3,3 +3,8 @@
   padding: 2rem;
 }
 
+@media screen and (min-width: 820px) {
+  .page-header {
+    margin-left: 220px;
+  }
+}

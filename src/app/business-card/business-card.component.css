@@ -33,6 +33,7 @@
   color: rgb(0, 128, 100);
   letter-spacing: .08rem;
   height: 4rem;
+  text-wrap: pretty;
 }
 
 .biz-title:hover {
@@ -42,6 +43,7 @@
 .biz-details  {
   list-style-type: none;
   font-size: 1.2rem;
+  text-wrap: pretty;
   letter-spacing: 0.05rem;
   margin-bottom: 1rem;
   margin-left: 0.7rem;

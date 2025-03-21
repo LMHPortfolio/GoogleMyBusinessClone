@@ -1,9 +1,8 @@
-import {Component, Host} from '@angular/core';
-import type {Business} from '../Business';
+import {Component} from '@angular/core';
 import { inject } from '@angular/core';
 import { BusinessDataService } from '../business-data.service';
-import { HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-business-card',
@@ -13,24 +12,24 @@ import { Router } from '@angular/router';
 })
 
 
-export class BusinessCardComponent implements Business {
+export class BusinessCardComponent  {
 
-  constructor(private router:Router) {
-  }
+  constructor(private router:Router) {}
+
 
   private businessService = inject(BusinessDataService);
 
-  name = this.businessService.generateFakeBusiness().name;
-  location = this.businessService.generateFakeBusiness().location;
-  rating = this.businessService.generateFakeBusiness().rating;
-  tags = this.businessService.generateFakeBusiness().tags;
+  businessName = this.businessService.businessData.name;
+  businessLocation = this.businessService.businessData.location;
+  businessRating = this.businessService.businessData.rating;
+  businessTags = this.businessService.businessData.tags;
 
-  @HostListener("click", ['$event'])
-    navigateToDetailView(event:MouseEvent):void {
-      event.preventDefault();
-      void this.router.navigate(['/business-detail']);
 
-    }
+  navigateToDetailView(event:MouseEvent):void {
+    event.preventDefault();
+    void this.router.navigate(['/business-detail']);
 
+
+  }
 
 }

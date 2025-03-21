@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject, Input, input} from '@angular/core';
+import {BusinessDataService} from '../business-data.service';
 
 @Component({
   selector: 'app-business-detail',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './business-detail.component.css'
 })
 export class BusinessDetailComponent {
+
+  private businessService = inject(BusinessDataService);
+
+  businessName = this.businessService.businessData.name;
+
+
 
 }

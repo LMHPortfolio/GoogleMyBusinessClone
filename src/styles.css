@@ -7,8 +7,7 @@
 
 }
 
-:root {
-background-color: #e5e5e5;
+:root {background-color: #2E2E2EFF;
 font-family: "Instrument Sans", sans-serif;
 
 }
@@ -21,10 +20,13 @@ font-family: "Instrument Sans", sans-serif;
   }
 
   body {
-    background-color: #e5e5e5;
-
+    background-color: #2E2E2EFF;
 
   }
+
+main {
+  padding: 1rem;
+}
 @media screen and (min-width: 828px) {
 
   main {
@@ -45,8 +47,6 @@ font-family: "Instrument Sans", sans-serif;
 
 }
 
-main {
-  padding: 1rem;
-}
+
 
 

@@ -2,19 +2,19 @@
 
 .nav-text {
 
-  color: #000000;
+  color: #f5f5f5;
   font-size: 1rem;
   width: 100%;
 
 }
 
 .nav-container {
-  width: 225px;
+  width: 250px;
   height: 100%;
   padding: 1rem;
   position: fixed;
   overflow-x: hidden;
-  background-color: rgb(255, 255, 255);
+  background-color: #1d1d1d;
   top: 0;
   left: 0;
   z-index: 1;
@@ -25,16 +25,17 @@
 .nav-container a {
   list-style-type: none;
   display: inline-flex;
-  letter-spacing: 0.03rem;
-  font-weight: 600;
+  letter-spacing: 0.07rem;
+
   padding-top: 0.3rem;
-  padding-left: 0.2rem;
+  padding-left: 0.3rem;
+  padding-bottom: 0.3rem;
 
   text-decoration: none;
   color: inherit;
   width: 90%;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 12px;
   align-items: center;
   transition: transform 0.3s ease;
 }
@@ -47,15 +48,17 @@
 
 .nav-container a:hover {
   transform: scale(1.03);
+  background-color: #404040;
 
 }
 
 #biz-central {
 padding-top: 1rem;
   font-size: 1.1rem;
+  color: #f5f5f5;
   font-style: italic;
-  font-weight: 800;
-  letter-spacing: 0.03rem;
+  font-weight: 700;
+  letter-spacing: 0.07rem;
   font-family: "Geist Mono", sans-serif;
   display: inline-flex;
   gap: 0.7rem;
@@ -145,6 +148,7 @@ padding-top: 1rem;
     display: inline-flex;
     padding-top: 1rem;
     padding-left: 1rem;
+    color: #f5f5f5;
     font-size: 1.1rem;
     font-style: italic;
     font-weight: bolder;

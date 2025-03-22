@@ -6,9 +6,12 @@
     <li>{{businessLocation}}</li>
     <li class="star-rating">Rating: <img src="assets/star.svg">{{ businessRating }}</li>
   </ul>
+  <div class="view-details-container">
+    <button class="view-details-button" (click)="navigateToDetailView($event)">View Business Profile</button>
+  </div>
+
   <ul>
     <li class="tag-chip">{{ businessTags }}</li>
-<button (click)="navigateToDetailView($event)">View: {{ businessName }}</button>
   </ul>
 
 </div>

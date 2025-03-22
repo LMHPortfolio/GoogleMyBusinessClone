@@ -1,1 +1,26 @@
-<h1 class="business-detail">Business Name: {{businessName}}</h1>
+
+<app-header [pageTitle]=pageTitle>{{pageTitle}}</app-header>
+<div class="business-detail-container">
+  <h2 class="biz-title">{{ businessData.businessName }}</h2>
+  <div class="biz-title-image-container">
+    <div class="biz-details">
+
+      <ul class="biz-details">
+        <li>{{businessData.businessLocation}}</li>
+        <li class="star-rating">Rating: <img src="assets/star.svg">{{ businessData.businessRating }}</li>
+      </ul>
+    </div>
+
+    <div class="biz-image-container">
+      <img src="" alt="">
+    </div>
+
+    </div>
+
+    <div class="biz-tags">
+      <ul>
+        <li class="tag-chip">{{businessData.businessTags}}</li>
+      </ul>
+    </div>
+  </div>
+

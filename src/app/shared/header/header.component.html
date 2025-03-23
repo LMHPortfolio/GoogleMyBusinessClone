@@ -1,1 +1,17 @@
+@if (!(dashboardIsCurrentPath)) {
+  <div>
+  <span id="back-link">
+      <img
+        src="assets/arrow_back_icon.svg" alt="return to previous page" class="back-arrow-icon">
+        <a
+          routerLink=".."
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+        >
+          Previous page
+         </a>
+    </span>
+  </div>
+}
+
 <h1 class="page-header">{{ pageTitle }}</h1>

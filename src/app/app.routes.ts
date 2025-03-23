@@ -10,6 +10,6 @@ export const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'business-list', component: BusinessListComponent},
   {path: 'business-detail', component: BusinessDetailComponent},
-  {path: '**', component:  DashboardComponent},
+  {path: '**', redirectTo: 'dashboard' },
 
 ];

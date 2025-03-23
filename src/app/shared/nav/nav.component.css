@@ -85,13 +85,13 @@ padding-top: 1rem;
 
 }
 
-.top-corner-menu {
+/*.top-corner-menu {
   display: block;
   float: right;
   padding-right: 2rem;
   padding-top: 1rem;
 
-}
+}*/
 
 
 @media screen and (max-width: 820px) {
@@ -124,19 +124,102 @@ padding-top: 1rem;
     display: none;
   }
 
-  .top-corner-menu {
+/*  .top-corner-menu {
     display: flex;
     place-self: end;
-
     padding-top: 1.5rem;
     padding-right: 1rem;
     gap: 1rem;
 
+  }*/
+
+  .full-container {
+
+
   }
 
   .hamburger-menu {
+    display: block;
+    position: fixed;
+    right: 0.9rem;
+    top: 0.3rem;
+    padding-top: 1rem;
+
+  }
+
+  .hamburger-menu:hover {
+      cursor: pointer;
+  }
+
+  .mobile-menu-accordion {
+    position: fixed;
+    right:0.9rem;
+    top: 0.5rem;
+
+    width: 12rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    line-height: 1.6rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+    background-color: rgb(65, 65, 65);
+    border: 2px solid rgba(128, 128, 128, 0.21);
+    border-radius: 8px;
+
+
+  }
+
+  .mobile-menu-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding-top: 0.5rem;
+
+  }
+
+  .mobile-menu-links {
+    padding-top: 0.5rem;
+
+  }
+
+  .mobile-menu-links li {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    width: 90%;
+    padding: 0.5rem;
+    letter-spacing: 0.03rem;
+    border-radius: 12px;
+
+  }
+
+  .mobile-menu-links li:hover {
+    cursor: pointer;
+    background-color: #545454;
+
+
+  }
+
+
+  .close-button {
+    position: relative;
+    align-self: flex-end;
+    font-size: 1.7rem;
+    border-radius: 12px;
+
+  }
+
+  .close-button:hover {
+    cursor: pointer;
+    font-size: 2rem;
+
+
+
+  }
+
+
+  .mobile-menu-links {
+    list-style-type: none;
   }
 
   #biz-central {
@@ -145,7 +228,9 @@ padding-top: 1rem;
 
   #biz-central-mobile {
 
+
     display: inline-flex;
+    align-items: center;
     padding-top: 1rem;
     padding-left: 1rem;
     color: #f5f5f5;
@@ -155,9 +240,10 @@ padding-top: 1rem;
     letter-spacing: 0.03rem;
     font-family: "Geist Mono", sans-serif;
     gap: 0.7rem;
-    align-items: center;
-
   }
 
-
+  #biz-central-mobile a {
+    color: #f5f5f5;
+    text-decoration: none;
+  }
 }

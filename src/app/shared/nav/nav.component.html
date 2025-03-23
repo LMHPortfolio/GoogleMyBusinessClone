@@ -1,26 +1,56 @@
 
 <!--open and close nav slide out on click nav icon-->
 <!--Mobile menu-->
-
-<span id="biz-central-mobile">
+<div>
+  <span id="biz-central-mobile">
       <img
         src="assets/bizcentral-icon.svg" alt="MyBizCentral" class="mybiz-icon">
-      MyBizCentral
+        <a
+          routerLink="/dashboard"
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+        >
+            MyBizCentral
+         </a>
     </span>
-<div class="top-corner-menu">
-    <span class="light-mode">
-    <img
-      src="assets/light_mode_icon.svg" alt="light-mode" class="light-mode-icon">
-  </span>
-  <span class="dark-mode">
-    <img
-      src="assets/dark_mode_icon.svg" alt="dark-mode" class="dark-mode-icon">
-  </span>
-  <div class="hamburger-menu">
+</div>
+
+<div>
+  <div class="hamburger-menu" (click)="toggleMenu()">
     <img
       src="assets/menu_icon.svg" alt="menu" class="hamburger-icon">
   </div>
+
+  @if (mobileMenuAccordion){
+    <div class="mobile-menu-accordion">
+      <div class="mobile-menu-container">
+        <div class="close-button" (click)="toggleMenu()">x</div>
+        <div>
+          <ul class="mobile-menu-links">
+            <a
+              routerLink="/dashboard"
+              routerLinkActive="activebutton"
+              ariaCurrentWhenActive="page"
+            >
+              <li>
+                Dashboard
+              </li>
+            </a>
+            <a
+              routerLink="/business-list"
+              routerLinkActive="activebutton"
+              ariaCurrentWhenActive="page"
+            >
+              <li>My Businesses</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  }
 </div>
+
+
 
 <!--Desktop Menu-->
 <div class="nav-container">

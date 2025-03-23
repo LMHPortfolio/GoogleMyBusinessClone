@@ -13,4 +13,11 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 })
 export class NavComponent {
 
+  mobileMenuActive: boolean = false;
+  mobileMenuAccordion: boolean = false;
+
+  toggleMenu() {
+    this.mobileMenuActive = !(this.mobileMenuActive);
+    this.mobileMenuAccordion = !(this.mobileMenuAccordion);
+  }
 }

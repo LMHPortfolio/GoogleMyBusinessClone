@@ -1,7 +1,18 @@
-<app-header [pageTitle]=pageTitle>{{pageTitle}}</app-header>
+<app-header [pageTitle]=pageTitle>
+  <div class="add-business-container">
+  <span class="add-business"><img src="/assets/add_circle_icon.svg" alt="">
+  <a (click)="onStartAddingBusiness($event)">Add New Business</a>
+</span>
+  </div>
+</app-header>
+
+
+
+
 
 <div class="business-list-container">
-  <!--@for loop over business-list.db.json-->
+
+<!--@for loop over business-list.db.json-->
 <app-business-card />
 
 </div>

@@ -1,6 +1,6 @@
 import {Injectable, Input} from '@angular/core';
 import { faker} from '@faker-js/faker';
-import {Business} from './Business';
+import {BusinessModel} from './Business.model';
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import {Business} from './Business';
 
 
 
-export class BusinessDataService implements Business {
+export class BusinessDataService implements BusinessModel {
 
 
     name= "";

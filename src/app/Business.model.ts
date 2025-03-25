@@ -1,4 +1,4 @@
-export interface Business {
+export interface BusinessModel {
 
   name:string;
   location:string;

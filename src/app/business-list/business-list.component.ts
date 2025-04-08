@@ -22,6 +22,8 @@ export class BusinessListComponent {
       void this.router.navigate(['/add-business']);
 
   }
+
+
 }
 
 

@@ -11,12 +11,12 @@ import {BusinessModel} from './Business.model';
 
 export class BusinessDataService implements BusinessModel {
 
-
     name= "";
     location = "";
     rating = "";
     tags= "";
 
+    @Input() newBusiness = {}
 
 
 
@@ -36,6 +36,11 @@ export class BusinessDataService implements BusinessModel {
       location: this.getFakeBusiness().location,
       rating: this.getFakeBusiness().rating,
       tags: this.getFakeBusiness().tags
+
+    }
+
+    getAddedBusiness() {
+
 
     }
 

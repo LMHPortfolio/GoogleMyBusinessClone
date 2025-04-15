@@ -1,40 +1,79 @@
 <app-header [pageTitle]=pageTitle />
 
-
-
-
 <div class="add-business-container">
-  <form (ngSubmit)="onSubmitNewBusiness()">
+  <form #addBusinessForm="ngForm" (ngSubmit)="onSubmitNewBusiness(addBusinessForm)">
     <label for="business-name">Business Name</label>
-      <input type="text" id="business-name" name="business-name" [(ngModel)]="businessName">
+      <input type="text"  id="business-name" name="business-name" [(ngModel)]="businessName" required #business_name="ngModel">
 
-  <label for="business-address">Address</label>
-  <input type="text" id="business-address" name="business-address" [(ngModel)] = "businessAddress">
-  <label for="business-city">City</label>
-  <input type="text" id="business-city" name="business-city"  [(ngModel)] = "businessCity">
+    @if (business_name.dirty || business_name.touched){
+      @if (business_name.hasError('required')){
+      <div class="alert">
+        Business Name is required.
+      </div>
+        }
+    }
+
+  <label for="business-address">Street Address</label>
+  <input type="text" id="business-address" name="business-address" [(ngModel)] = "businessAddress" required #business_address="ngModel">
+    @if (business_address.dirty || business_address.touched){
+      @if (business_address.hasError('required')){
+        <div class="alert">
+          Street Address is required.
+        </div>
+      }
+    }
+
+    <label for="business-city">City</label>
+  <input type="text" id="business-city" name="business-city"  [(ngModel)] = "businessCity" required #business_city="ngModel">
+    @if (business_city.dirty || business_city.touched){
+      @if (business_city.hasError('required')){
+        <div class="alert">
+          Business City is required.
+        </div>
+      }
+    }
+
     <div id="city-state">
       <label for="business-state">State</label>
-      <input type="text" id="business-state" name="business-state" [(ngModel)] = "businessState">
+      <input type="text" id="business-state" name="business-state" [(ngModel)] = "businessState" required #business_state="ngModel">
+      @if (business_state.dirty || business_state.touched){
+        @if (business_state.hasError('required')){
+          <div class="alert">
+            Business State is required.
+          </div>
+        }
+      }
       <label for="business-zipcode">Zip Code</label>
-      <input type="text" id="business-zipcode" name="business-zipcode" [(ngModel)] = "businessZipcode">
+      <input type="text" id="business-zipcode" name="business-zipcode" [(ngModel)] = "businessZipcode" required #business_zipcode="ngModel">
     </div>
-
-
-
+    @if (business_zipcode.dirty || business_zipcode.touched){
+      @if (business_zipcode.hasError('required')){
+        <div class="alert">
+          Business Zip Code is required.
+        </div>
+      }
+    }
 
     <label for="business-tags">Tags</label>
-      <input type="text" id="business-tags" name="business-tags" [(ngModel)] = "businessTags">
+      <input type="text" id="business-tags" name="business-tags" [(ngModel)] = "businessTags" >
 
     <label for="business-category">Category</label>
-      <select type="text" id="business-category" name="business-category" [(ngModel)] = "businessCategory">
+      <select type="text" id="business-category" name="business-category" [(ngModel)] = "businessCategory" required #business_category="ngModel">
         <option>Real Estate</option>
         <option>Advertising</option>
         <option>Construction</option>
         <option>IT</option>
         <option>Education</option>
       </select>
+    @if (business_category.dirty || business_category.touched){
+      @if (business_category.hasError('required')){
+        <div class="alert">
+          Business Category is required.
+        </div>
+      }
+    }
 
-    <button class="form-button" type="submit">Submit</button>
+    <button class="form-button" type="submit" >Submit</button>
 
     <a
       class="cancel"
@@ -48,11 +87,4 @@
   </form>
 </div>
 
-
-<!--
-name: string;
-//img
-address: string;
-tags: string | string [];
-businessCategory: string;
-businessHours: {};-->
+<!--more details to add later, image and business hours, maybe another form to "complete your profile" after initial creation-->

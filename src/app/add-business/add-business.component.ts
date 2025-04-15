@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, NgModule, Output} from '@angular/core';
 import {HeaderComponent} from '../shared/header/header.component';
-import {NewBusinessModel} from './new-business.model';
-import {FormsModule} from '@angular/forms';
+import {FormControl, FormsModule, NgForm} from '@angular/forms';
 import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
@@ -13,6 +12,8 @@ import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
 export class AddBusinessComponent {
 
   constructor(private route: ActivatedRoute) {}
+
+  addBusinessForm!:NgForm;
 
   @Output() add = new EventEmitter<{
 
@@ -28,6 +29,8 @@ export class AddBusinessComponent {
 
   pageTitle = "Add new business";
 
+
+
   businessName= "";
   businessAddress= "";
   businessCity= "";
@@ -37,8 +40,15 @@ export class AddBusinessComponent {
   businessCategory= "";
 
 
-onSubmitNewBusiness () {
-  this.add.emit({
+
+  onSubmitNewBusiness (form: NgForm) {
+
+
+    console.log('form submitted!');
+    console.log(form.value);
+
+
+    this.add.emit({
     businessName: this.businessName,
     businessAddress: this.businessAddress,
     businessCity: this.businessCity,
@@ -47,13 +57,17 @@ onSubmitNewBusiness () {
     businessTags: this.businessZipcode,
     businessCategory: this.businessCategory,
 
-
-
-
   });
 
-  console.log(this.businessName);
+
+form.resetForm();
+
+
+
 
 }
 
+
 }
+
+

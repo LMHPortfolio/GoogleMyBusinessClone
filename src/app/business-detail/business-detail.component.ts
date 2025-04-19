@@ -17,13 +17,16 @@ export class BusinessDetailComponent {
 
   businessData = {
 
-    businessName: this.businessService.businessData.name,
-    businessLocation: this.businessService.businessData.location,
-    businessRating: this.businessService.businessData.rating,
-    businessTags: this.businessService.businessData.tags,
+    businessName: this.businessService.businessData.businessName,
+    businessAddress: this.businessService.businessData.businessAddress,
+    businessCity: this.businessService.businessData.businessCity,
+    businessState: this.businessService.businessData.businessState,
+    businessZipcode: this.businessService.businessData.businessZipcode,
+    businessTags: this.businessService.businessData.businessTags,
+    businessCategory: this.businessService.businessData.businessCategory
 
   }
-  pageTitle = "Viewing: " + this.businessService.businessData.name;
+  pageTitle = "Viewing: " + this.businessService.businessData.businessName;
 
 
 

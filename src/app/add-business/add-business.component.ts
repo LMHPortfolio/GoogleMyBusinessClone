@@ -1,7 +1,8 @@
-import {Component, EventEmitter, NgModule, Output} from '@angular/core';
+import {Component, Output, output, signal,} from '@angular/core';
 import {HeaderComponent} from '../shared/header/header.component';
-import {FormControl, FormsModule, NgForm} from '@angular/forms';
+import {FormsModule, NgForm} from '@angular/forms';
 import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
+import type {NewBusinessModel} from './new-business.model';
 
 @Component({
   selector: 'app-add-business',
@@ -13,59 +14,42 @@ export class AddBusinessComponent {
 
   constructor(private route: ActivatedRoute) {}
 
-  addBusinessForm!:NgForm;
-
-  @Output() add = new EventEmitter<{
-
-    businessName:string,
-    businessAddress:string,
-    businessCity:string,
-    businessState:string,
-    businessZipcode:string,
-    businessTags:string,
-    businessCategory:string | string[];
-
-  }>
-
   pageTitle = "Add new business";
 
 
+//implements newBusinessModel for the shape of the output...after changing to signals
 
-  businessName= "";
-  businessAddress= "";
-  businessCity= "";
-  businessState= "";
-  businessZipcode= "";
-  businessTags= "";
-  businessCategory= "";
-
-
-
-  onSubmitNewBusiness (form: NgForm) {
-
-
-    console.log('form submitted!');
-    console.log(form.value);
-
-
-    this.add.emit({
-    businessName: this.businessName,
-    businessAddress: this.businessAddress,
-    businessCity: this.businessCity,
-    businessState: this.businessState,
-    businessZipcode: this.businessZipcode,
-    businessTags: this.businessZipcode,
-    businessCategory: this.businessCategory,
-
+  @Output() formFields = signal({
+    businessName: "",
+    businessAddress: "",
+    businessCity: "",
+    businessState: "",
+    businessZipcode: "",
+    businessTags: "",
+    businessCategory: ""
   });
 
 
-form.resetForm();
+  onSubmitNewBusiness (formData: NgForm) {
+      this.formFields.set({
+      businessName: formData.form.value.businessName,
+      businessAddress: formData.form.value.businessAddress,
+      businessCity: formData.form.value.businessCity,
+      businessState: formData.form.value.businessState,
+      businessZipcode: formData.form.value.businessZipcode,
+      businessTags: formData.form.value.businessTags,
+      businessCategory: formData.form.value.businessCategory
+  })
 
 
+    console.log('form submitted!');
+  console.log(this.formFields());
+
+    formData.resetForm();
+
+  }
 
 
-}
 
 
 }

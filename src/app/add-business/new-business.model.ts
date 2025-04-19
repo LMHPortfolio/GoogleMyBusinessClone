@@ -1,9 +1,10 @@
 export interface NewBusinessModel {
-  name: string;
-  //img
-  address: string;
-  tags: string | string [];
+  businessName: string;
+  businessAddress: string;
+  businessCity: string;
+  businessState: string;
+  businessZipcode: string;
+  businessTags: string;
   businessCategory: string;
-  businessHours: {};
 
 }

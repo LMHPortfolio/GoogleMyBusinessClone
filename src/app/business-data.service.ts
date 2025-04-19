@@ -1,6 +1,5 @@
-import {Injectable, Input} from '@angular/core';
-import { faker} from '@faker-js/faker';
-import {BusinessModel} from './Business.model';
+import {Injectable, effect} from '@angular/core';
+import {AddBusinessComponent} from './add-business/add-business.component';
 
 
 @Injectable({
@@ -9,39 +8,37 @@ import {BusinessModel} from './Business.model';
 
 
 
-export class BusinessDataService implements BusinessModel {
-
-    name= "";
-    location = "";
-    rating = "";
-    tags= "";
-
-    @Input() newBusiness = {}
+export class BusinessDataService {
 
 
+  businessData = {
+    businessName: "",
+    businessAddress: "",
+    businessCity: "",
+    businessState: "",
+    businessZipcode: "",
+    businessTags: "",
+    businessCategory: ""
+  }
 
-  getFakeBusiness() {
-    return {
-        name: faker.company.name(),
-        location: faker.location.streetAddress(),
-        rating: Math.floor(Math.random()*6) + "." + Math.floor(Math.random()*9).toString(),
-        tags: faker.location.city()
-      }
-
-  };
-
-
-    businessData = {
-      name: this.getFakeBusiness().name,
-      location: this.getFakeBusiness().location,
-      rating: this.getFakeBusiness().rating,
-      tags: this.getFakeBusiness().tags
-
-    }
-
-    getAddedBusiness() {
+  constructor() {}
 
 
-    }
+
+  dummyBusinessData = {
+    "businesses": [
+      {
+        "id": "1",
+        "name": "Easy Street Realty",
+        "address": "100 easy st",
+        "city": "Boston",
+        "state": "MA",
+        "tags": "Boston",
+
+
+      },
+
+    ]
+  }
 
 }

@@ -8,6 +8,7 @@
   padding-bottom: 1rem;
   gap: 0.9rem;
   background-color: rgb(65, 65, 65);
+  margin: 1rem;
 
 
 
@@ -94,10 +95,10 @@ text-wrap: pretty;
   background-color: #99e373;
   border: 2px solid rgba(128, 128, 128, 0.21);
   margin-bottom: 1rem;
-  padding: 0.7rem;
+  padding: 0.5rem;
   border-radius: 20px;
   transition: transform 0.5s ease;
-  width: 60%;
+  width:80%;
 
 }
 

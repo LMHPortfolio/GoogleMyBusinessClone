@@ -1,8 +1,10 @@
-import {Component, Output, output, signal,} from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {HeaderComponent} from '../shared/header/header.component';
 import {FormsModule, NgForm} from '@angular/forms';
-import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
-import type {NewBusinessModel} from './new-business.model';
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
+import {BusinessDataService} from '../business-data.service';
+
+
 
 @Component({
   selector: 'app-add-business',
@@ -12,14 +14,11 @@ import type {NewBusinessModel} from './new-business.model';
 })
 export class AddBusinessComponent {
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router:Router, private businessService: BusinessDataService) {}
 
   pageTitle = "Add new business";
 
-
-//implements newBusinessModel for the shape of the output...after changing to signals
-
-  @Output() formFields = signal({
+  formFields = {
     businessName: "",
     businessAddress: "",
     businessCity: "",
@@ -27,29 +26,17 @@ export class AddBusinessComponent {
     businessZipcode: "",
     businessTags: "",
     businessCategory: ""
-  });
+  }
 
 
-  onSubmitNewBusiness (formData: NgForm) {
-      this.formFields.set({
-      businessName: formData.form.value.businessName,
-      businessAddress: formData.form.value.businessAddress,
-      businessCity: formData.form.value.businessCity,
-      businessState: formData.form.value.businessState,
-      businessZipcode: formData.form.value.businessZipcode,
-      businessTags: formData.form.value.businessTags,
-      businessCategory: formData.form.value.businessCategory
-  })
 
-
-    console.log('form submitted!');
-  console.log(this.formFields());
+  onSubmitNewBusiness (formData: NgForm):void {
+    this.businessService.setSubmittedNewBusiness(formData.form.value);
+    void this.router.navigate(['/business-list']);
 
     formData.resetForm();
 
   }
-
-
 
 
 }

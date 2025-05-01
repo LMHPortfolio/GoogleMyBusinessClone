@@ -2,9 +2,13 @@
 <div class="card">
   <div class="biz-image-container" style="height: 250px; background-image:url('https://plus.unsplash.com/premium_photo-1661964014750-963a28aeddea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
   <div class="card-body">
-  <h2 class="biz-title">{{ businessName }}</h2>
+
+ <h2 class="biz-title">{{ business().businessName }}</h2>
+
     <ul class="biz-details">
-      <li>{{businessAddress}}</li>
+
+      <li>{{ business().businessAddress }}</li>
+
       <li class="star-rating">Rating: <img src="assets/star.svg"></li>
     </ul>
     <div class="view-details-container">
@@ -12,7 +16,9 @@
     </div>
 
     <ul>
-      <li class="tag-chip">{{ businessTags }}</li>
+
+      <li class="tag-chip">{{ business().businessTags }}</li>
+
     </ul>
   </div>
 

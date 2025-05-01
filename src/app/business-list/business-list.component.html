@@ -10,9 +10,17 @@
 
 
 
-<div class="business-list-container">
+<div>
 
-<!--@for loop over business-list.db.json-->
-<app-business-card />
+<!--@for loop over business-list and add properties to card-->
+
+  <ul class="business-list-container">
+    @for(business of businessService.businessList(); track business.businessName) {
+      <app-business-card [business]="business"/>
+    }
+
+  </ul>
+
+
 
 </div>

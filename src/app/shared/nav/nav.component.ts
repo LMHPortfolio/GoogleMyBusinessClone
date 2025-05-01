@@ -19,5 +19,6 @@ export class NavComponent {
   toggleMenu() {
     this.mobileMenuActive = !(this.mobileMenuActive);
     this.mobileMenuAccordion = !(this.mobileMenuAccordion);
+
   }
 }

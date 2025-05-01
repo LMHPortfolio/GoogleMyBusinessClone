@@ -1,6 +1,8 @@
 import {Component, inject, Input, input} from '@angular/core';
 import {BusinessDataService} from '../business-data.service';
 import {HeaderComponent} from '../shared/header/header.component';
+import {NewBusinessModel} from '../add-business/new-business.model';
+
 
 @Component({
   selector: 'app-business-detail',
@@ -13,9 +15,15 @@ export class BusinessDetailComponent {
 
   private businessService = inject(BusinessDataService);
 
+  business = input.required<NewBusinessModel>();
+
+  pageTitle = "Viewing [Details]";
+
+
+
   //will add more business info later for details that aren't shown on dashboard view
 
-  businessData = {
+  /*businessData = {
 
     businessName: this.businessService.businessData.businessName,
     businessAddress: this.businessService.businessData.businessAddress,
@@ -28,6 +36,9 @@ export class BusinessDetailComponent {
   }
   pageTitle = "Viewing: " + this.businessService.businessData.businessName;
 
+
+
+*/
 
 
 }

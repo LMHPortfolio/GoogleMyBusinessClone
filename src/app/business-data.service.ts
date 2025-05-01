@@ -1,17 +1,16 @@
-import {Injectable, effect} from '@angular/core';
-import {AddBusinessComponent} from './add-business/add-business.component';
+import {Injectable, signal} from '@angular/core';
+import {NewBusinessModel} from './add-business/new-business.model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 
-
-
 export class BusinessDataService {
 
+  businessList = signal<NewBusinessModel[]>([]);
 
-  businessData = {
+  private submittedBusiness = signal<NewBusinessModel>({
     businessName: "",
     businessAddress: "",
     businessCity: "",
@@ -19,26 +18,24 @@ export class BusinessDataService {
     businessZipcode: "",
     businessTags: "",
     businessCategory: ""
+  });
+
+  getBusinessList() {
+    return this.businessList;
   }
 
-  constructor() {}
-
-
-
-  dummyBusinessData = {
-    "businesses": [
-      {
-        "id": "1",
-        "name": "Easy Street Realty",
-        "address": "100 easy st",
-        "city": "Boston",
-        "state": "MA",
-        "tags": "Boston",
-
-
-      },
-
-    ]
+  setSubmittedNewBusiness(newBusiness: NewBusinessModel) {
+    this.submittedBusiness.set(newBusiness);
+    this.updateBusinessList();
   }
+
+  updateBusinessList() {
+    const currentList = this.businessList();
+    this.businessList.set([...currentList, this.submittedBusiness()]);
+    console.log(this.businessList());
+  }
+
+
+
 
 }

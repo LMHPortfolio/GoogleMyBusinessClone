@@ -1,12 +1,12 @@
 
 <app-header [pageTitle]=pageTitle />
 <div class="business-detail-container">
-  <h2 class="biz-title">{{ businessData.businessName }}</h2>
+ <h2 class="biz-title">{{ business().businessName }}</h2>
   <div class="biz-title-image-container">
     <div class="biz-details">
 
       <ul class="biz-details">
-        <li>{{businessData.businessAddress}}</li>
+    <!--  <li>{{businessData.businessAddress}}</li>-->
         <li class="star-rating">Rating: <img src="assets/star.svg"></li>
       </ul>
     </div>
@@ -19,7 +19,9 @@
 
     <div class="biz-tags">
       <ul>
-        <li class="tag-chip">{{businessData.businessTags}}</li>
+<!--
+      <li class="tag-chip">{{businessData.businessTags}}</li>
+-->
       </ul>
     </div>
   </div>

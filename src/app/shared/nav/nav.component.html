@@ -22,11 +22,11 @@
   </div>
 
   @if (mobileMenuAccordion){
-    <div class="mobile-menu-accordion">
-      <div class="mobile-menu-container">
-        <div class="close-button" (click)="toggleMenu()">x</div>
+    <div class="mobile-menu-accordion" >
+      <div class="mobile-menu-container" >
+        <div class="close-button" (click)="toggleMenu()" >x</div>
         <div>
-          <ul class="mobile-menu-links">
+          <ul class="mobile-menu-links" (click)="toggleMenu()" >
             <a
               routerLink="/dashboard"
               routerLinkActive="activebutton"

@@ -3,11 +3,11 @@
   flex-direction: column;
   min-width: 300px;
   max-width: 400px;
-  border: 2px solid rgba(128, 128, 128, 0.21);
+  border: 2px solid #80808035;
   border-radius: 12px;
   padding-bottom: 1rem;
   gap: 0.9rem;
-  background-color: rgb(65, 65, 65);
+  background-color: #414141FF;
   margin: 1rem;
 
 
@@ -25,6 +25,10 @@
   width: 100%;
 
 }
+.biz-image-container:hover {
+ cursor: pointer;
+}
+
 
 .card-body {
   padding: 1.2rem;

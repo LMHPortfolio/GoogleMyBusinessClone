@@ -1,7 +1,8 @@
-import {Component, inject, Input, input} from '@angular/core';
-import {BusinessDataService} from '../business-data.service';
+import {Component, inject, input, OnInit, signal} from '@angular/core';
 import {HeaderComponent} from '../shared/header/header.component';
 import {NewBusinessModel} from '../add-business/new-business.model';
+import {ActivatedRoute} from '@angular/router';
+import {BusinessDataService} from '../business-data.service';
 
 
 @Component({
@@ -10,35 +11,28 @@ import {NewBusinessModel} from '../add-business/new-business.model';
   templateUrl: './business-detail.component.html',
   styleUrl: './business-detail.component.css'
 })
-export class BusinessDetailComponent {
+export class BusinessDetailComponent implements OnInit {
+
+  //business = input.required<NewBusinessModel>();
+  business = signal<NewBusinessModel | null>(null);
+  pageTitle = "";
+
+  route: ActivatedRoute = inject(ActivatedRoute);
+    constructor(private businessService: BusinessDataService) {}
 
 
-  private businessService = inject(BusinessDataService);
-
-  business = input.required<NewBusinessModel>();
-
-  pageTitle = "Viewing [Details]";
-
-
-
-  //will add more business info later for details that aren't shown on dashboard view
-
-  /*businessData = {
-
-    businessName: this.businessService.businessData.businessName,
-    businessAddress: this.businessService.businessData.businessAddress,
-    businessCity: this.businessService.businessData.businessCity,
-    businessState: this.businessService.businessData.businessState,
-    businessZipcode: this.businessService.businessData.businessZipcode,
-    businessTags: this.businessService.businessData.businessTags,
-    businessCategory: this.businessService.businessData.businessCategory
-
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        const businessData = this.businessService.getBusinessById(id);
+        if (businessData) {
+          this.business.set(businessData);
+          this.pageTitle = `Viewing Business Details for ${businessData.businessName}`;
+        }
+      }
+    });
   }
-  pageTitle = "Viewing: " + this.businessService.businessData.businessName;
-
-
-
-*/
 
 
 }

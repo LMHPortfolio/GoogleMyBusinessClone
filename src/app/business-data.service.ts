@@ -11,23 +11,30 @@ export class BusinessDataService {
   businessList = signal<NewBusinessModel[]>([]);
 
   private submittedBusiness = signal<NewBusinessModel>({
+    businessId: "",
     businessName: "",
     businessAddress: "",
     businessCity: "",
     businessState: "",
     businessZipcode: "",
     businessTags: "",
-    businessCategory: ""
+    businessCategory: "",
+
   });
 
   getBusinessList() {
     return this.businessList;
   }
 
-  setSubmittedNewBusiness(newBusiness: NewBusinessModel) {
-    this.submittedBusiness.set(newBusiness);
-    this.updateBusinessList();
+getBusinessById(id: string) {
+return this.businessList().find((business) => business.businessId === id);
+}
+
+
+  setSubmittedBusinessId() {
+    this.submittedBusiness().businessId = Math.floor(Math.random()*100).toString();
   }
+
 
   updateBusinessList() {
     const currentList = this.businessList();
@@ -35,6 +42,11 @@ export class BusinessDataService {
     console.log(this.businessList());
   }
 
+  setSubmittedNewBusiness(newBusiness: NewBusinessModel) {
+    this.submittedBusiness.set(newBusiness);
+    this.setSubmittedBusinessId();
+    this.updateBusinessList();
+  }
 
 
 

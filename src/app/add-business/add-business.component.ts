@@ -19,6 +19,7 @@ export class AddBusinessComponent {
   pageTitle = "Add new business";
 
   formFields = {
+
     businessName: "",
     businessAddress: "",
     businessCity: "",

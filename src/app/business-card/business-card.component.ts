@@ -1,5 +1,5 @@
 import {Component, input} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Router} from '@angular/router';
 import {NewBusinessModel} from '../add-business/new-business.model';
 
 
@@ -20,11 +20,14 @@ business = input.required<NewBusinessModel>();
 
 
 
-  navigateToDetailView(event:MouseEvent):void {
-    event.preventDefault();
-    void this.router.navigate(['/business-detail']);
+
+  navigateToDetailView() {
+
+    if (this.business() && this.business().businessId) {
+      void this.router.navigate(['/business-details', this.business().businessId]);
+    }
 
   }
-  //submit event that this business was clicked and show that detail
+
 
 }

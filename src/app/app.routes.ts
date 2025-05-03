@@ -10,7 +10,7 @@ export const routes: Routes = [
 
   {path: 'dashboard', component: DashboardComponent},
   {path: 'business-list', component: BusinessListComponent},
-  {path: 'business-detail', component: BusinessDetailComponent},
+  {path: 'business-details/:id', component: BusinessDetailComponent},
   {path: 'add-business', component: AddBusinessComponent},
   {path: '**', redirectTo: 'dashboard' },
 

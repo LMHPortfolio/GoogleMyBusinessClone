@@ -6,33 +6,33 @@
     <input type="text" id="business-name" name="businessName" [(ngModel)]="formFields.businessName" required
            #business_name="ngModel">
 
-    @if (business_name.dirty || business_name.touched) {
+    @if (business_name.dirty || business_name.touched && business_name.value === "") {
       @if (business_name.hasError('required')) {
-        <div class="alert">
+        <p class="alert">
           Business Name is required.
-        </div>
+        </p>
       }
     }
 
     <label for="business-address">Street Address</label>
     <input type="text" id="business-address" name="businessAddress" [(ngModel)]="formFields.businessAddress" required
            #business_address="ngModel">
-    @if (business_address.dirty || business_address.touched) {
+    @if (business_address.dirty || business_address.touched && business_address.value === "") {
       @if (business_address.hasError('required')) {
-        <div class="alert">
+        <p class="alert">
           Street Address is required.
-        </div>
+        </p>
       }
     }
 
     <label for="business-city">City</label>
     <input type="text" id="business-city" name="businessCity" [(ngModel)]="formFields.businessCity" required
            #business_city="ngModel">
-    @if (business_city.dirty || business_city.touched) {
+    @if (business_city.dirty || business_city.touched && business_city.value === "") {
       @if (business_city.hasError('required')) {
-        <div class="alert">
+        <p class="alert">
           Business City is required.
-        </div>
+        </p>
       }
     }
 
@@ -40,22 +40,22 @@
       <label for="business-state">State</label>
       <input type="text" id="business-state" name="businessState" [(ngModel)]="formFields.businessState" required
              #business_state="ngModel">
-      @if (business_state.dirty || business_state.touched) {
+      @if (business_state.dirty || business_state.touched && business_state.value === "") {
         @if (business_state.hasError('required')) {
-          <div class="alert">
+          <p class="alert">
             Business State is required.
-          </div>
+          </p>
         }
       }
       <label for="business-zipcode">Zip Code</label>
       <input type="text" id="business-zipcode" name="businessZipcode" [(ngModel)]="formFields.businessZipcode" required
              #business_zipcode="ngModel">
     </div>
-    @if (business_zipcode.dirty || business_zipcode.touched) {
+    @if (business_zipcode.dirty || business_zipcode.touched && business_zipcode.value === "") {
       @if (business_zipcode.hasError('required')) {
-        <div class="alert">
+        <p class="alert">
           Business Zip Code is required.
-        </div>
+        </p>
       }
     }
 
@@ -71,15 +71,25 @@
       <option>IT</option>
       <option>Education</option>
     </select>
-    @if (business_category.dirty || business_category.touched) {
+    @if (business_category.dirty || business_category.touched && business_category.value === "") {
       @if (business_category.hasError('required')) {
-        <div class="alert">
+        <p class="alert">
           Business Category is required.
-        </div>
+        </p>
       }
     }
+    <button
+      [disabled]="!addBusinessForm.valid" class="form-button" type="submit" >
+      Submit
+    </button>
 
-    <button class="form-button" type="submit" >Submit</button>
+    @if (!addBusinessForm.valid) {
+      <p class="alert">
+        Please fill in required fields.
+      </p>
+    }
+
+
 
     <a
       class="cancel"

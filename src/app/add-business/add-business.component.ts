@@ -26,7 +26,8 @@ export class AddBusinessComponent {
     businessState: "",
     businessZipcode: "",
     businessTags: "",
-    businessCategory: ""
+    businessCategory: "",
+
   }
 
 

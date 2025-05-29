@@ -3,13 +3,14 @@
 <div class="add-business-container">
   <form #addBusinessForm="ngForm" (ngSubmit)="onSubmitNewBusiness(addBusinessForm)">
     <label for="business-name">Business Name</label>
-    <input type="text" id="business-name" name="businessName" [(ngModel)]="formFields.businessName" required
+    <input type="text" id="business-name" name="businessName" [(ngModel)]="formFields.businessName" minlength="2" maxlength="45" required
            #business_name="ngModel">
 
     @if (business_name.dirty || business_name.touched && business_name.value === "") {
       @if (business_name.hasError('required')) {
         <p class="alert">
           Business Name is required.
+          Please enter at least 2 characters.
         </p>
       }
     }
@@ -36,9 +37,9 @@
       }
     }
 
-    <div id="city-state">
+    <div id="state-zip">
       <label for="business-state">State</label>
-      <input type="text" id="business-state" name="businessState" [(ngModel)]="formFields.businessState" required
+      <input type="text" id="business-state" name="businessState" [(ngModel)]="formFields.businessState" maxlength="2" required
              #business_state="ngModel">
       @if (business_state.dirty || business_state.touched && business_state.value === "") {
         @if (business_state.hasError('required')) {
@@ -48,7 +49,7 @@
         }
       }
       <label for="business-zipcode">Zip Code</label>
-      <input type="text" id="business-zipcode" name="businessZipcode" [(ngModel)]="formFields.businessZipcode" required
+      <input type="text" id="business-zipcode" name="businessZipcode" [(ngModel)]="formFields.businessZipcode" maxlength="5" required
              #business_zipcode="ngModel">
     </div>
     @if (business_zipcode.dirty || business_zipcode.touched && business_zipcode.value === "") {
@@ -78,27 +79,36 @@
         </p>
       }
     }
-    <button
-      [disabled]="!addBusinessForm.valid" class="form-button" type="submit" >
-      Submit
-    </button>
 
-    @if (!addBusinessForm.valid) {
-      <p class="alert">
-        Please fill in required fields.
-      </p>
-    }
+    <div class="submit-container">
+
+      @if (!addBusinessForm.valid) {
+        <div>
+          <p class="alert">
+            Please fill in required fields.
+          </p>
+        </div>
+
+      }
+      <div>
+        <button
+          [disabled]="!addBusinessForm.valid" class="form-button" type="submit" >
+          Submit
+        </button>
+      </div>
+      <div>
+        <a
+          class="cancel"
+          routerLink="/business-list"
+          routerLinkActive="activebutton"
+          ariaCurrentWhenActive="page"
+        >
+          Cancel
+        </a>
+      </div>
+    </div>
 
 
-
-    <a
-      class="cancel"
-      routerLink="/business-list"
-      routerLinkActive="activebutton"
-      ariaCurrentWhenActive="page"
-    >
-      Cancel
-    </a>
 
   </form>
 </div>

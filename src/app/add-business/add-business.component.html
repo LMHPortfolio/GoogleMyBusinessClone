@@ -2,7 +2,8 @@
 
 <div class="add-business-container">
   <form #addBusinessForm="ngForm" (ngSubmit)="onSubmitNewBusiness(addBusinessForm)">
-    <label for="business-name">Business Name</label>
+    <span>* Field is required</span>
+    <label for="business-name">Business Name *</label>
     <input type="text" id="business-name" name="businessName" [(ngModel)]="formFields.businessName" minlength="2" maxlength="45" required
            #business_name="ngModel">
 
@@ -15,7 +16,7 @@
       }
     }
 
-    <label for="business-address">Street Address</label>
+    <label for="business-address">Street Address *</label>
     <input type="text" id="business-address" name="businessAddress" [(ngModel)]="formFields.businessAddress" required
            #business_address="ngModel">
     @if (business_address.dirty || business_address.touched && business_address.value === "") {
@@ -26,7 +27,7 @@
       }
     }
 
-    <label for="business-city">City</label>
+    <label for="business-city">City *</label>
     <input type="text" id="business-city" name="businessCity" [(ngModel)]="formFields.businessCity" required
            #business_city="ngModel">
     @if (business_city.dirty || business_city.touched && business_city.value === "") {
@@ -38,7 +39,7 @@
     }
 
     <div id="state-zip">
-      <label for="business-state">State</label>
+      <label for="business-state">State *</label>
       <input type="text" id="business-state" name="businessState" [(ngModel)]="formFields.businessState" maxlength="2" required
              #business_state="ngModel">
       @if (business_state.dirty || business_state.touched && business_state.value === "") {
@@ -48,7 +49,7 @@
           </p>
         }
       }
-      <label for="business-zipcode">Zip Code</label>
+      <label for="business-zipcode">Zip Code *</label>
       <input type="text" id="business-zipcode" name="businessZipcode" [(ngModel)]="formFields.businessZipcode" maxlength="5" required
              #business_zipcode="ngModel">
     </div>
@@ -63,7 +64,7 @@
     <label for="business-tags">Tags</label>
     <input type="text" id="business-tags" name="businessTags" [(ngModel)]="formFields.businessTags">
 
-    <label for="business-category">Category</label>
+    <label for="business-category">Business Category *</label>
     <select type="text" id="business-category" name="businessCategory" [(ngModel)]="formFields.businessCategory" required
             #business_category="ngModel">
       <option>Real Estate</option>
@@ -92,7 +93,8 @@
       }
       <div>
         <button
-          [disabled]="!addBusinessForm.valid" class="form-button" type="submit" >
+          [disabled]="!addBusinessForm.valid"
+           class="form-button" type="submit" >
           Submit
         </button>
       </div>

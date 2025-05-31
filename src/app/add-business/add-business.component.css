@@ -7,14 +7,14 @@
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 
 }
 
 input, select {
-  width: 50%;
+  width: 40rem;
   border-radius: 12px;
   height: 3rem;
   border: 2px solid rgba(128, 128, 128, 0.21);
@@ -27,33 +27,31 @@ input, select {
 
 label {
   font-size: 1.2rem;
+  padding: 0.5rem;
 }
 
 
 #business-city {
-width: 40%;
+width: 25rem;
 }
 
-
-#business-state, #business-zipcode {
-  width: 15%;
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
-
-
-}
-#state-zip {
-  flex-direction: row;
-
+#business-state {
+  width: 5rem;
 
 }
 
 
-.submit-container {
-
-  flex-direction: column;
+#business-zipcode {
+  width: 8rem;
 
 }
+
+
+
+.submit-container div {
+  padding: 1rem;
+}
+
 .submit-container div {
   padding: 1rem;
 }
@@ -70,6 +68,13 @@ width: 40%;
     padding: 0.7rem;
     border-radius: 20px;
     width: 10rem;
+}
+
+.form-button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+
+
 }
 
 .form-button:hover {
@@ -104,8 +109,6 @@ width: 40%;
 
 
 
-
-
 @media screen and (max-width: 820px) {
   .add-business-container {
     margin-left: unset;
@@ -122,29 +125,19 @@ width: 40%;
     width: 80%;
   }
 
-
-  #business-state, #business-zipcode {
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-
-
-  }
-
   #business-state {
-    width: 20%;
+    width: 3rem;
 
   }
+
 
   #business-zipcode {
-    width: 30%;
+    width: 6rem;
 
   }
 
-  #city-state {
-    width: 80%;
 
 
-  }
 
   .form-button, .cancel {
     place-self: center;
@@ -152,5 +145,5 @@ width: 40%;
 
 
 
-
 }
+

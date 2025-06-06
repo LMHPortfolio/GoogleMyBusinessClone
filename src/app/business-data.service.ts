@@ -1,5 +1,6 @@
-import {Injectable, signal} from '@angular/core';
+import {Injectable, signal, inject} from '@angular/core';
 import {NewBusinessModel} from './add-business/new-business.model';
+import {HttpClient} from '@angular/common/http';
 
 
 @Injectable({
@@ -9,6 +10,8 @@ import {NewBusinessModel} from './add-business/new-business.model';
 export class BusinessDataService {
 
   businessList = signal<NewBusinessModel[]>([]);
+
+  private http = inject(HttpClient);
 
   private submittedBusiness = signal<NewBusinessModel>({
     businessId: "",

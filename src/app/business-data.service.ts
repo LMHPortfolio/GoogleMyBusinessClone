@@ -3,15 +3,19 @@ import {NewBusinessModel} from './add-business/new-business.model';
 import {HttpClient} from '@angular/common/http';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
+
 
 export class BusinessDataService {
 
   businessList = signal<NewBusinessModel[]>([]);
 
   private http = inject(HttpClient);
+
+
 
   private submittedBusiness = signal<NewBusinessModel>({
     businessId: "",
@@ -24,6 +28,7 @@ export class BusinessDataService {
     businessCategory: "",
 
   });
+
 
   getBusinessList() {
     return this.businessList;
@@ -50,6 +55,10 @@ return this.businessList().find((business) => business.businessId === id);
     this.setSubmittedBusinessId();
     this.updateBusinessList();
   }
+
+
+
+
 
 
 

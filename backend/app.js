@@ -1,26 +1,28 @@
 const express = require('express');
+const fs = require('node:fs/promises');
+const bodyParser = require('body-parser');
+
 const app = express();
+app.use(bodyParser.json());
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*" );
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
+  next();
+});
 
 
-app.use('/api/posts', (req, res) => {
-  const posts = [
-    {
-      id: Math.floor(Math.random()*10000).toString(),
-      title: 'first post',
-      content: 'this is coming from the server',
-    },
-      {
-        id: Math.floor(Math.random()*10000).toString(),
-        title: 'second post',
-        content: 'this is also coming from the server',
-      }
-  ];
+
+app.use('/', (req, res, next) => {
+
 
   res.status(200).json({
     message: 'posts fetched successfully!',
-    posts: posts,
+
   });
 });
+
 
 
 

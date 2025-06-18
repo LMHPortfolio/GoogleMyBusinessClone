@@ -49,3 +49,8 @@ server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
 
+process.on('SIGINT', function() {
+  console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
+  process.exit(0);
+});
+
